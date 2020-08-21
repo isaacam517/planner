@@ -43,7 +43,7 @@ function App() {
     <div>
       <Header>
         <h1>PLANILHA DE ATIVIDADES DA SEMANA</h1>
-        <p>Clique na atividade que deseja excluir</p>
+        <p>Para Remover, basta clique na atividade</p>
       </Header>
       <TaskForm updateTasks={getTasks}/>
       <PlannerContainer>
