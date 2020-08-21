@@ -15,12 +15,12 @@ const SelectContainer = styled(FormControl)`
     }
 `
 
-const TaskFormContainer = styled.form`
-    display: grid;
-    justify-content: center;
-    align-items: end;
-    gap: 8px;
-    grid-auto-flow: column;
+const TaskFormContainer = styled.form`  
+  display: grid;
+  justify-content: center;
+  align-items: end;
+  gap: 8px;
+  grid-auto-flow: column;
 
 `
 

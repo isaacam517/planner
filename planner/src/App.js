@@ -4,13 +4,19 @@ import PlannerDay from './components/PlannerDay';
 import styled from 'styled-components';
 import axios from 'axios'
 
-export const apiUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-julian-isaac'
+export const apiUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-julian-isaac/'
 
 const PlannerContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 4px;
   padding: 32px;
+  min-height:380px;
+`
+
+const Header = styled.div`
+  background-color: #E8DAEF; 
+  text-align:center;
 `
 
 function App() {
@@ -35,15 +41,19 @@ function App() {
   
   return (
     <div>
+      <Header>
+        <h1>PLANILHA DE ATIVIDADES DA SEMANA</h1>
+        <p>Clique na atividade que deseja excluir</p>
+      </Header>
       <TaskForm updateTasks={getTasks}/>
       <PlannerContainer>
-        <PlannerDay dayName={'segunda'} tasks={filterTasksByDay('segunda')} />
-        <PlannerDay dayName={'terca'} tasks={filterTasksByDay('terca')} />
-        <PlannerDay dayName={'quarta'} tasks={filterTasksByDay('quarta')} />
-        <PlannerDay dayName={'quinta'} tasks={filterTasksByDay('quinta')} />
-        <PlannerDay dayName={'sexta'} tasks={filterTasksByDay('sexta')} />
-        <PlannerDay dayName={'sabado'} tasks={filterTasksByDay('sabado')} />
-        <PlannerDay dayName={'domingo'} tasks={filterTasksByDay('domingo')} />        
+        <PlannerDay getTasks={getTasks} dayName={'Segunda'} tasks={filterTasksByDay('segunda')} />
+        <PlannerDay getTasks={getTasks} dayName={'Terça'} tasks={filterTasksByDay('terca')} />
+        <PlannerDay getTasks={getTasks} dayName={'Quarta'} tasks={filterTasksByDay('quarta')} />
+        <PlannerDay getTasks={getTasks} dayName={'Quinta'} tasks={filterTasksByDay('quinta')} />
+        <PlannerDay getTasks={getTasks} dayName={'Sexta'} tasks={filterTasksByDay('sexta')} />
+        <PlannerDay getTasks={getTasks} dayName={'Sábado'} tasks={filterTasksByDay('sabado')} />
+        <PlannerDay getTasks={getTasks} dayName={'Domingo'} tasks={filterTasksByDay('domingo')} />        
       </PlannerContainer>     
     </div>
   );
