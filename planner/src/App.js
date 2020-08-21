@@ -43,7 +43,7 @@ function App() {
     <div>
       <Header>
         <h1>PLANILHA DE ATIVIDADES DA SEMANA</h1>
-        <p>Para Remover, basta clique na atividade</p>
+        <p>Para Remover, basta clicar na atividade</p>
       </Header>
       <TaskForm updateTasks={getTasks}/>
       <PlannerContainer>
